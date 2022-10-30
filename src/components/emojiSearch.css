@@ -1,0 +1,33 @@
+input {
+    padding: 2px 100px;
+    outline: 2px groove grey;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+}
+
+input:hover {
+    cursor: pointer
+}
+
+input:focus {
+    outline: 5px solid grey
+}
+
+input::placeholder {
+    opacity: 0.2;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px){
+    input {
+        padding: 2px 50px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    input {
+        padding: 2px 0px;
+        width: 80%;
+    }
+}

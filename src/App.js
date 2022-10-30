@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Header } from './components/Header'
+import { EmojiResults } from './components/EmojiResults'
+import { EmojiSearch } from './components/EmojiSearch'
+import filterEmoji from './components/filterEmoji'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      filteredEmoji: filterEmoji("", 10),
+    }
+  }
+
+  handleSearchInput = (event) => {
+    this.setState({
+      filteredEmoji: filterEmoji(event.target.value, 10),
+    })
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <Header />
+        <EmojiSearch handleSearchInput={this.handleSearchInput} />
+        <EmojiResults searchResults={this.state.filteredEmoji} />
+      </div>
+    )
+  }
 }
 
-export default App;
