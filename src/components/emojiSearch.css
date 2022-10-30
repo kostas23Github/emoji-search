@@ -1,6 +1,6 @@
 input {
     padding: 2px 100px;
-    outline: 2px groove grey;
+    outline: 2px solid grey;
     font-size: 20px;
     border: none;
     text-align: center;

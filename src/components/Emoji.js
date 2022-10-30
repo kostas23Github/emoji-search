@@ -7,7 +7,6 @@ class Emoji extends Component {
     const { title, symbol } = this.props;
     const red = Math.round(Math.random()*(200-100))
     const green = Math.round(Math.random()*50)
-    console.log(this.props)
     return (
       <div
         className='emoji'
