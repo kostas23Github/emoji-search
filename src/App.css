@@ -4,3 +4,7 @@
   box-sizing: border-box;
   font-size: 32px;
 }
+
+.github-fork-ribbon:before {
+  background-color: #333;
+}
